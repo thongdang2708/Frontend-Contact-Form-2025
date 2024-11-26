@@ -1,4 +1,4 @@
 
 export default function getEnvironments () {
-    return import.meta.env.VITE_API_KEY || process.env.VITE_API_KEY;
+    return "https://back-end-contact-form-thesis-2025.onrender.com";
 }
