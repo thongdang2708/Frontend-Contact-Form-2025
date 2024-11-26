@@ -143,7 +143,7 @@ function BodyForm({ setIsSubmittedSuccessfully, organizationId }) {
 
         try {
 
-            const response = await axios.post(import.meta.env.VITE_API_KEY + "/api/v1/case/saveCase", dataForSubmittingToBackend);
+            const response = await axios.post("/api/v1/case/saveCase", dataForSubmittingToBackend);
 
             const data = response?.data;
     
