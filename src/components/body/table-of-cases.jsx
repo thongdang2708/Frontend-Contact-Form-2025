@@ -6,6 +6,7 @@ import NotFound from '../screens/NotFound';
 import { DataGrid } from '@mui/x-data-grid';
 import CommonLoading from '../common-elements/CommonLoading';
 import { useNavigate } from 'react-router-dom';
+import getEnvironments from '../utils/GetEnv';
 
 function TableOfCases() {
 
@@ -25,7 +26,7 @@ function TableOfCases() {
     });
 
     if (id != null) {
-      const response = await axiosInstance.get(import.meta.env.VITE_API_KEY + `/api/v1/case/organization/${id}`);
+      const response = await axiosInstance.get(getEnvironments() + `/api/v1/case/organization/${id}`);
 
       const data = response?.data;
 

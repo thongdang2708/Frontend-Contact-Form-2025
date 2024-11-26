@@ -1,11 +1,12 @@
 import axios from 'axios';
+import getEnvironments from '../utils/GetEnv';
 
 // Set up axios instance to handle with access token and refresh token
 
 const createAxiosInstance = ({setRefreshTokenFunction, logOut}) => {
 
 const axiosInstance = axios.create({
-    baseURL: import.meta.env.VITE_API_KEY,
+    baseURL: getEnvironments(),
     headers: {
       'Content-Type': 'application/json',
     },

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import React, { createContext } from "react";
+import getEnvironments from "../utils/GetEnv";
 
 
 //Set initial values for Auth Context
@@ -35,7 +36,7 @@ export const AuthProvider = ({children}) => {
     //Log in user
     let logIn = async (userInfo, toast, reset, setDefaultValues, navigate) => {
         try {
-        const response = await axios.post(import.meta.env.VITE_API_KEY + "/api/v1/auth/login", userInfo);
+        const response = await axios.post(getEnvironments() + "/api/v1/auth/login", userInfo);
 
         const data = response?.data;
 
@@ -82,7 +83,7 @@ export const AuthProvider = ({children}) => {
         if (refreshTokenFromSession) {
             let newAccessTokenAfterBeingRefreshed = "";
             try {
-                const response = await axios.post(import.meta.env.VITE_API_KEY + "/api/v1/auth/getNewTokenFromRefreshToken", {
+                const response = await axios.post(getEnvironments() + "/api/v1/auth/getNewTokenFromRefreshToken", {
                     refreshToken: refreshTokenFromSession,
                 });
                 const data = response?.data;

@@ -19,6 +19,7 @@ import { formatDateFunctionHandling } from '../utils/FormatDateFunction';
 import { inputSanitization } from '../utils/Sanitization';
 import postalCodeValidation from '../utils/ValidatePostalCode';
 import axios from 'axios';
+import getEnvironments from '../utils/GetEnv';
 
 function BodyForm({ setIsSubmittedSuccessfully, organizationId }) {
 
@@ -143,7 +144,7 @@ function BodyForm({ setIsSubmittedSuccessfully, organizationId }) {
 
         try {
 
-            const response = await axios.post(import.meta.env.VITE_API_KEY + "/api/v1/case/saveCase", dataForSubmittingToBackend);
+            const response = await axios.post(getEnvironments() + "/api/v1/case/saveCase", dataForSubmittingToBackend);
 
             const data = response?.data;
     

@@ -8,6 +8,7 @@ import { inputSanitization } from '../utils/Sanitization';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import getEnvironments from '../utils/GetEnv';
 
 function Register() {
   
@@ -61,7 +62,7 @@ function Register() {
       
       try {
 
-        await axios.post(import.meta.env.VITE_API_KEY + "/api/v1/auth/register", dataSubmittedForBackend);
+        await axios.post(getEnvironments() + "/api/v1/auth/register", dataSubmittedForBackend);
 
         toast.success("Register an organization successfully! Please log in!");
 

@@ -13,6 +13,7 @@ import { Container } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { DoesThePersonHaveDifficultyRememberingThingsOrIsConfused, HowIndependentIsThePersonConcernedInEverydayLife, SupportReceived, WhatIsTheMainReasonForYourRequest } from '../../objects/FieldObjects';
 import CommonListItem from '../common-elements/CommonListItem';
+import getEnvironments from '../utils/GetEnv';
 function SingleCase() {
 
   const params = useParams();
@@ -34,7 +35,7 @@ function SingleCase() {
     });
 
     if (caseId != null) {
-        const response = await axiosInstance.get(import.meta.env.VITE_API_KEY + `/api/v1/case/${caseId}`);
+        const response = await axiosInstance.get(getEnvironments() + `/api/v1/case/${caseId}`);
 
         const data = response?.data;
     

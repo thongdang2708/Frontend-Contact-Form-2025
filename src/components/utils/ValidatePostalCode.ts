@@ -1,10 +1,11 @@
 import axios from "axios";
+import getEnvironments from "./GetEnv";
 
 const postalCodeValidation = async (postalCode) => {
 
     try {
     
-    await axios.get(import.meta.env.VITE_API_KEY + `/api/v1/postal-code/${postalCode}`);
+    await axios.get(getEnvironments() + `/api/v1/postal-code/${postalCode}`);
 
     return true;
 

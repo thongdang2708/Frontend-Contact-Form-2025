@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NotFound from '../screens/NotFound';
 import CommonLoading from '../common-elements/CommonLoading';
+import getEnvironments from '../utils/GetEnv';
 
 function ContactForm() {
   const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
@@ -19,7 +20,7 @@ function ContactForm() {
   const checkOrganizationId = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(import.meta.env.VITE_API_KEY + `/api/v1/organization/existsOrganization/${organizationId}`);
+      const response = await axios.get(getEnvironments() + `/api/v1/organization/existsOrganization/${organizationId}`);
       
       const data = response?.data;
       setExistsOrganization(data?.exists);
