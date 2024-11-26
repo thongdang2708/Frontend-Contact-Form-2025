@@ -19,7 +19,7 @@ function ContactForm() {
   const checkOrganizationId = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`/api/v1/organization/existsOrganization/${organizationId}`);
+      const response = await axios.get(import.meta.env.VITE_API_KEY + `/api/v1/organization/existsOrganization/${organizationId}`);
       
       const data = response?.data;
       setExistsOrganization(data?.exists);

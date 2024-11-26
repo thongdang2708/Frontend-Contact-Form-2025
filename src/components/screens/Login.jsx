@@ -10,7 +10,7 @@ import { inputSanitization } from '../utils/Sanitization';
 import { toast } from 'react-toastify';
 
 function Login() {
-
+  
   // Get Auth Context
   let { logIn, isAuthenticated } = useContext(AuthContext);
 

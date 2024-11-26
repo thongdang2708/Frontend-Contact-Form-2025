@@ -34,7 +34,7 @@ function SingleCase() {
     });
 
     if (caseId != null) {
-        const response = await axiosInstance.get(`/api/v1/case/${caseId}`);
+        const response = await axiosInstance.get(import.meta.env.VITE_API_KEY + `/api/v1/case/${caseId}`);
 
         const data = response?.data;
     

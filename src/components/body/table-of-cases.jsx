@@ -25,7 +25,7 @@ function TableOfCases() {
     });
 
     if (id != null) {
-      const response = await axiosInstance.get(`/api/v1/case/organization/${id}`);
+      const response = await axiosInstance.get(import.meta.env.VITE_API_KEY + `/api/v1/case/organization/${id}`);
 
       const data = response?.data;
 

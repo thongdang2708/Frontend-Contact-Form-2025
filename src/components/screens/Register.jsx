@@ -61,7 +61,7 @@ function Register() {
       
       try {
 
-        await axios.post("/api/v1/auth/register", dataSubmittedForBackend);
+        await axios.post(import.meta.env.VITE_API_KEY + "/api/v1/auth/register", dataSubmittedForBackend);
 
         toast.success("Register an organization successfully! Please log in!");
 
