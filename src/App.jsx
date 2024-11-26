@@ -1,7 +1,4 @@
 import { ToastContainer } from "react-toastify";
-import ContactForm from "./components/body/contact-form";
-import Footer from "./components/footer/footer";
-import Header from "./components/header/Header";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Login from "./components/screens/Login";
 import OfficialContactForm from "./components/screens/OfficialContactForm";

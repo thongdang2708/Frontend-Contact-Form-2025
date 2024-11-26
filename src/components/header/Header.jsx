@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from "@mui/material/Box";
 import Container from '@mui/material/Container';
 import AuthContext from '../context/AuthContext';
-import { Badge, Button, Chip } from '@mui/material';
+import { Button, Chip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 function Header({
   fromContactForm = false
