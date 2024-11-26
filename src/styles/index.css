@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Set the header height */
+    z-index: 1000;
+
+}
+
+.footer {
+    width: "100%";
+    position: "fixed";
+    bottom: 0;
+}
