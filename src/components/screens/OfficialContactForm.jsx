@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Header from '../header/Header'
 import ContactForm from '../body/contact-form'
-import Footer from '../footer/footer'
+import Footer from '../footer/Footer'
 import AuthContext from '../context/AuthContext'
 import { Box, Card, Typography } from '@mui/material'
 
