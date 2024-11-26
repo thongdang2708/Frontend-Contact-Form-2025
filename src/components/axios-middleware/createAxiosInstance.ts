@@ -6,7 +6,7 @@ import getEnvironments from '../utils/GetEnv';
 const createAxiosInstance = ({setRefreshTokenFunction, logOut}) => {
 
 const axiosInstance = axios.create({
-    baseURL: "https://back-end-contact-form-thesis-2025.onrender.com",
+    baseURL: getEnvironments(),
     headers: {
       'Content-Type': 'application/json',
     },
